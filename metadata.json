@@ -1,0 +1,21 @@
+{
+  "name": "vim_puppet",
+  "version": "0.1.0",
+  "author": "waymilky",
+  "summary": "Setup vim plugins and packages for puppet development",
+  "license": "Apache 2.0",
+  "source": "https://github.com/waymilky/vim_puppet.git",
+  "issues_url": "https://github.com/waymilky/vim_puppet/issues",
+  "project_page": "https://github.com/waymilky/vim_puppet",
+  "dependencies": [
+        {
+            "name": "puppetlabs-stdlib",
+            "version_requirement": ">= 1.0.0"
+        },
+        {
+            "name": "puppetlabs-vcsrepo",
+            "version_requirement": ">= 1.3.1"
+        },
+   ]
+}
+
