@@ -43,7 +43,7 @@ class {'vim_puppet': }
  ~~~
 * Standalone setup with default parameters :
 ~~~
-puppet apply -e "class {'vim_puppet':}
+puppet apply -e "class {'vim_puppet':}"
 ~~~
 ### What puppet affects
 
