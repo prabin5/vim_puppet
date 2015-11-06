@@ -36,6 +36,11 @@
 # Default: true
 # Optional, do not sets this value for puppet versions less than 3.6.0
 #
+# [*package_ensure *]
+# Puppet package ensure attribute (present, latest ...)
+# Default: latest
+# Optional.
+#
 # === Examples
 #
 #  class { 'vim_puppet':}
@@ -53,6 +58,7 @@ class vim_puppet(
   $exec_path             = [ '/usr/local/bin/', '/bin/', '/usr/bin' ],
   $misc_packages         = ['vim','curl','tar','git'],
   $virtual_package       = true,
+  $package_ensure        = latest,
 ){
   
   # Validate parameters
