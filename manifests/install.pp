@@ -19,10 +19,14 @@ class vim_puppet::install(){
     path => $_exec_path
   }
 
+  if (versioncmp("${::puppetversion}" , '3.6.0' ) >=0)  {
+    Package { allow_virtual => $vim_puppet::virtual_package }
+  } 
+
+    
   # Install misc packages
   package  {$_misc_packages:
     ensure        => 'present',
-    allow_virtual => yes,
   }
 
   # Install puppet-lint

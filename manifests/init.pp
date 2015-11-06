@@ -31,6 +31,11 @@
 # Array list of other packages required during puppet development
 # Required, Default => ['vim','curl','tar','git']
 #
+# [* virtual_package *]
+# Specifies if virtual package names are allowed for install and uninstall.
+# Default: true
+# Optional, do not sets this value for puppet versions less than 3.6.0
+#
 # === Examples
 #
 #  class { 'vim_puppet':}
@@ -47,6 +52,7 @@ class vim_puppet(
   $vimrc_url             = 'https://github.com/ricciocri/vimrc.git',
   $exec_path             = [ '/usr/local/bin/', '/bin/', '/usr/bin' ],
   $misc_packages         = ['vim','curl','tar','git'],
+  $virtual_package       = true,
 ){
   
   # Validate parameters
