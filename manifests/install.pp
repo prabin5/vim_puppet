@@ -26,7 +26,7 @@ class vim_puppet::install(){
     
   # Install misc packages
   package  {$_misc_packages:
-    ensure => $vim_puppet::package_ensure
+    ensure => $vim_puppet::package_ensure,
   }
 
   # Install puppet-lint

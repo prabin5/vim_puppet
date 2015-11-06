@@ -56,7 +56,7 @@ class vim_puppet(
   $disable_puppet_parser = false,
   $vimrc_url             = 'https://github.com/ricciocri/vimrc.git',
   $exec_path             = [ '/usr/local/bin/', '/bin/', '/usr/bin' ],
-  $misc_packages         = ['vim','curl','tar','git'],
+  $misc_packages         = ['vim-enhanced','curl','tar','git'],
   $virtual_package       = true,
   $package_ensure        = latest,
 ){
