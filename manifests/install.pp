@@ -72,9 +72,10 @@ class vim_puppet::install(){
     }
     ~>
     exec { 'Update Submodules':
-      command   => 'git submodule update --init --recursive',
-      cwd       => "${_user_home}/.vim",
-      logoutput => true,
+      command     => 'git submodule update --init --recursive',
+      cwd         => "${_user_home}/.vim",
+      refreshonly => true,
+      logoutput   => true,
     }
   }
 }
