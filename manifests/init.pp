@@ -31,6 +31,24 @@
 # Array list of other packages required during puppet development
 # Required, Default => ['vim','curl','tar','git']
 #
+# [* virtual_package *]
+# Specifies if virtual package names are allowed for install and uninstall.
+# Default: true
+# Optional, do not sets this value for puppet versions less than 3.6.0
+#
+# [*package_ensure *]
+# Puppet package ensure attribute (present, latest ...)
+# Default: latest
+# Optional.
+#
+# [* git_clone_ssh *]
+# Clone git repor using https or ssh
+# false will clone using https
+#
+# [* user_home *]
+# User home to set vim
+# default: /root
+#
 # === Examples
 #
 #  class { 'vim_puppet':}
@@ -46,7 +64,11 @@ class vim_puppet(
   $disable_puppet_parser = false,
   $vimrc_url             = 'https://github.com/ricciocri/vimrc.git',
   $exec_path             = [ '/usr/local/bin/', '/bin/', '/usr/bin' ],
-  $misc_packages         = ['vim','curl','tar','git'],
+  $misc_packages         = ['vim-enhanced','curl','tar','git'],
+  $virtual_package       = true,
+  $package_ensure        = latest,
+  $git_clone_ssh         = false,
+  $user_home             = '/root',
 ){
   
   # Validate parameters

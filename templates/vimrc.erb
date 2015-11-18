@@ -7,33 +7,37 @@ filetype indent plugin on
 set expandtab
 set smarttab
 set autoindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_enable_signs=1
-<% if @_show_lint_warning %>
+<% if @_show_lint_warning -%>
 "let g:syntastic_quiet_messages = {'level': 'warnings'}
-<% else %>        
+<% else -%>        
 let g:syntastic_quiet_messages = {'level': 'warnings'}
-<% end %>
+<% end -%>
 let g:syntastic_auto_loc_list=1
+:color slate
 
-<% if @_disable_puppet_parser && !@_disable_puppetlint %>
+<% if @_disable_puppet_parser && !@_disable_puppetlint -%>
 "To enable Just puppet-lint and disable the parser uncomment next line
 let g:syntastic_puppet_checkers=['puppetlint']
-<% end %>
-<% if @_disable_puppetlint && !@_disable_puppet_parser %>
+<% end -%>
+<% if @_disable_puppetlint && !@_disable_puppet_parser -%>
 "To enable Just puppet parser and disable the puppet-lint uncomment next line
 let g:syntastic_puppet_checkers=['puppet']
-<% end %>
-<% if @_disable_puppetlint && @_disable_puppet_parser %>
+<% end -%>
+<% if @_disable_puppetlint && @_disable_puppet_parser -%>
 let g:syntastic_puppet_checkers=['']
-<% end %>
-<% if !@_disable_puppetlint && !@_disable_puppet_parser %>
+<% end -%>
+<% if !@_disable_puppetlint && !@_disable_puppet_parser -%>
 "To enable Just puppet-lint and disable the parser uncomment next line
 "let g:syntastic_puppet_checkers=['puppetlint']
-<% end %>
+<% end -%>
 
 let g:vim_markdown_folding_disabled=1
 
@@ -42,5 +46,3 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 execute pathogen#infect()                 
-syntax on                 
-filetype plugin indent on                 
