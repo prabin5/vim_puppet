@@ -1,12 +1,12 @@
 {
-  "name": "vim_puppet",
+  "name": "waymilky-vim_puppet",
   "version": "1.0.0",
   "author": "prabin5",
   "summary": "Setup vim plugins and packages for puppet development",
   "license": "Apache-2.0",
   "source": "https://github.com/prabin5/vim_puppet.git",
-  "issues_url": "https://github.com/waymilky/vim_puppet/issues",
-  "project_page": "https://github.com/waymilky/vim_puppet",
+  "issues_url": "https://github.com/prabin5/vim_puppet/issues",
+  "project_page": "https://github.com/prabin5/vim_puppet",
   "dependencies": [
      { "name": "puppetlabs-stdlib", "version_requirement": ">= 1.0.0 < 5.0.0" },
      { "name": "puppetlabs-vcsrepo", "version_requirement": ">= 1.3.1 < 2.0.0"}
@@ -36,5 +36,6 @@
            "14.04"
           ]
       }
-  ]
+  ],
+  "description": "Setup vim plugins including puppet-lint and puppet parser and packages for puppet development"
 }
